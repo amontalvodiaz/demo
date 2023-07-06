@@ -1,1 +1,18 @@
-<p>search works!</p>
+<div class="wrapper">
+  <div class="control input-group flex-nowrap">
+    <span class="input-group-text" id="addon-wrapping">Search</span>
+    <input
+      type="text"
+      name="keyword"
+      id="keyword"
+      class="input form-control"
+      aria-describedby="addon-wrapping"
+      [formControl]="typeahead"
+      (input)="suggest()"
+    />
+  </div>
+  <div class="list suggestions" *ngIf="suggestion.length">
+    <p *ngFor="let s of suggestion">{{s}}</p>
+  </div>
+
+</div>
